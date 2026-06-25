@@ -1,4 +1,4 @@
-{pkgs, ... }:
+{pkgs, config, cfg, ... }:
 {
 
   # NOTE: Scaling, opacity of bottom bar and tiling windows with Meta + T doesn't work
@@ -35,7 +35,7 @@
     workspace = {
       lookAndFeel = "org.kde.breezedark.desktop"; 
       iconTheme = "Tela-dark";
-      wallpaper = /home/user/.local/share/wallpapers/pexels-eberhardgross-1612353.jpg;
+      wallpaper = "${cfg.homeDirectory}/.local/share/wallpapers/pexels-eberhardgross-1612353.jpg";
     };
 
     kscreenlocker = {

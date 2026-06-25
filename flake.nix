@@ -26,20 +26,30 @@
   outputs =
     inputs@{ nixpkgs, home-manager, plasma-manager, ... }:
     let
+      cfg = {
+        username = builtins.getEnv "USER";
+        homeDirectory = builtins.getEnv "HOME";
+        projectRoot = "${cfg.homeDirectory}/Github/home-manager";
+      };
+
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
       ];
-    in {
-      homeConfigurations.user = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        extraSpecialArgs = { inherit inputs; };
+    in
+    {
+      homeConfigurations.${cfg.username} = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
         modules = [ 
           inputs.plasma-manager.homeModules.plasma-manager
           ./home.nix 
         ];
+        # Optionally use extraSpecialArgs to pass through arguments to home.nix
+        extraSpecialArgs = { inherit inputs; inherit cfg; };
       };
     };
 }

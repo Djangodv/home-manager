@@ -1,8 +1,18 @@
 {pkgs, config, cfg, ... }:
 {
 
-  # NOTE: Scaling, opacity of bottom bar and tiling windows with Meta + T doesn't work
+  # home.file.".local/share/icons/".source = config.lib.file.mkOutOfStoreSymlink "/home/user/Github/nixos/theme/icons/";
+  home.file.".local/share/icons/" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/theme/icons";
+    force = true;
+  };
 
+  home.file.".local/share/wallpapers/" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/theme/wallpapers";
+    force = true;
+  };
+
+  # NOTE: Scaling, opacity of bottom bar and tiling windows with Meta + T doesn't work
   programs.plasma = {
     enable = true;
     overrideConfig = true;

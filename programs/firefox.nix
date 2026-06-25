@@ -1,5 +1,11 @@
 { pkgs, lib, config, cfg, ... }:
 {
+
+  home.file.".mozilla/firefox/default/places.sqlite" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/bookmarks/places.sqlite";
+    force = true;
+  };
+
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-esr;

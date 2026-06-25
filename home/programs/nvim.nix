@@ -8,6 +8,11 @@ in
     # Enable sideloading `init.lua` (useful if you want to manage your own configuration imperatively)
     # Fix: https://discourse.nixos.org/t/neovim-error-installing-file-outside-home/77225
     sideloadInitLua = true;
+
+    # Fix legacy behavior warnings, due to older stateVersion
+    withRuby = false;
+    withPython3 = true;
+
     package = neovim-nightly;
 		viAlias = true;
 		vimAlias = true;

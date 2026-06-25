@@ -32,4 +32,8 @@ in
   # Fonts
   # xdg.configFile."mimeapps.list".force = true;
 
+  # Fix: "bash: home-manager: command not found"
+  # Source: https://nix-community.github.io/home-manager/usage/configuration.html#configuration-example
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 }

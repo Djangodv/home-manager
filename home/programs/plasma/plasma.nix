@@ -3,12 +3,12 @@
 
   # home.file.".local/share/icons/".source = config.lib.file.mkOutOfStoreSymlink "/home/user/Github/nixos/theme/icons/";
   home.file.".local/share/icons/" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/theme/icons";
+    source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/home/programs/plasma/theme/icons";
     force = true;
   };
 
   home.file.".local/share/wallpapers/" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/theme/wallpapers";
+    source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/home/programs/plasma/theme/wallpapers";
     force = true;
   };
 
@@ -49,7 +49,7 @@
     };
 
     kscreenlocker = {
-      appearance.wallpaper = /home/user/.local/share/wallpapers/pexels-eberhardgross-1612353.jpg;
+      appearance.wallpaper = "${cfg.homeDirectory}/.local/share/wallpapers/pexels-eberhardgross-1612353.jpg";
     };
 
     shortcuts = {

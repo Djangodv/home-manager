@@ -6,7 +6,8 @@
 
     shellAliases = {
       exp-idf = ". $HOME/esp/esp-idf/export.sh";
-      nix-run = "sudo nixos-rebuild switch --no-build-output --impure --flake ~/Github/nixos#nixos-demo";
+      nixos-run = "sudo nixos-rebuild switch --no-build-output --impure --flake ~/Github/nixos#nixos-demo";
+      home-run = "home-manager switch --impure --flake ~/Github/home-manager/";
       gs = "git status";
 			gz-run = "sudo x11docker --network --xephyr --gpu -i -- --volume ~/Github/team-waterbenders/workspace/:/workspace/ -- s4_2026:6 bash";
     };

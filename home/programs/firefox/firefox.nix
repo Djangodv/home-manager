@@ -2,7 +2,7 @@
 {
 
   home.file.".mozilla/firefox/default/places.sqlite" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/bookmarks/places.sqlite";
+    source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/home/programs/firefox/bookmarks/places.sqlite";
     force = true;
   };
 

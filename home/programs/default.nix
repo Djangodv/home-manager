@@ -3,12 +3,12 @@
 	imports = [
 
 		# Paths to other modules
+		./firefox
+		./plasma
 		./git.nix
-		./plasma.nix
 		./ssh.nix
 		./alacritty.nix
 		./bash.nix
-		./firefox.nix
 		./nvim.nix
 		./vscode.nix
 

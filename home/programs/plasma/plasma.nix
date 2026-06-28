@@ -1,7 +1,7 @@
 {pkgs, config, cfg, ... }:
 {
 
-  # home.file.".local/share/icons/".source = config.lib.file.mkOutOfStoreSymlink "/home/user/Github/nixos/theme/icons/";
+  # home.file.".local/share/icons/".source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/home/programs/plasma/theme/icons";
   home.file.".local/share/icons/" = {
     source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/home/programs/plasma/theme/icons";
     force = true;
@@ -9,6 +9,12 @@
 
   home.file.".local/share/wallpapers/" = {
     source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/home/programs/plasma/theme/wallpapers";
+    force = true;
+  };
+
+  # Adds certain places to the sidebar in Dolphin (e.g. screenshots/)
+  home.file.".local/share/user-places.xbel" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${cfg.projectRoot}/home/programs/plasma/user-places.xbel";
     force = true;
   };
 

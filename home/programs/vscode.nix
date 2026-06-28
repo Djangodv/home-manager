@@ -145,6 +145,12 @@
 				"command" = "markdown.showPreviewToSide";
 				"when" = "!notebookEditorFocused && editorLangId == 'markdown'";
 			}
+			# Fix: https://github.com/microsoft/vscode/issues/315171#issuecomment-4405843470
+			{
+				"key" = "ctrl+shift+v";
+				"command" = "workbench.action.terminal.paste";
+				"when" = "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported";
+			}
 			{
 				"key" = "ctrl+j";
 				"command" = "workbench.action.quickOpenSelectNext";

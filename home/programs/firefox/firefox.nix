@@ -135,10 +135,26 @@
         "browser.urlbar.suggest.recentsearches" = false;
         # See https://librewolf.net/docs/faq/#how-do-i-fully-prevent-autoplay for options
         "media.autoplay.blocking_policy" = 2;
-        "browser.compactmode.show" = true;
+        # Directly enable compact mode
+        "browser.uidensity" = 1;
+        # "browser.compactmode.show" = true;
+        "browser.aboutConfig.showWarning" = false;
         "browser.ctrlTab.sortByRecentlyUsed" = true;
-        # TODO: Below needs testing
-        # "browser.uiCustomization.navBarWhenVerticalTabs" = ''["sidebar-button","back-button","forward-button","stop-reload-button","customizableui-special-spring1","vertical-spacer","urlbar-container","customizableui-special-spring2","save-to-pocket-button","downloads-button","fxa-toolbar-menu-button","unified-extensions-button"]'';
+        "browser.uiCustomization.state" = {
+          "placements" = { 
+            "widget-overflow-fixed-list" = []; 
+            "unified-extensions-area" = ["myallychou_gmail_com-browser-action" "vimium-c_gdh1995_cn-browser-action" "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action" ]; 
+            "nav-bar" = [ "sidebar-button" "forward-button" "back-button" "urlbar-container" "vertical-spacer" "unified-extensions-button"  "ublock0_raymondhill_net-browser-action"]; 
+            "toolbar-menubar" = [ "menubar-items" ]; 
+            "TabsToolbar" = []; 
+            "vertical-tabs" = ["tabbrowser-tabs"]; 
+            "PersonalToolbar" = ["personal-bookmarks"]; 
+          }; 
+          "seen" = [ "developer-button" "myallychou_gmail_com-browser-action" "ublock0_raymondhill_net-browser-action" "vimium-c_gdh1995_cn-browser-action" "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action" "screenshot-button"];
+          "dirtyAreaCache" = [ "nav-bar" "TabsToolbar" "vertical-tabs" "unified-extensions-area"]; 
+          "currentVersion" = 22; 
+          "newElementCount" = 1;
+        };
       };
     };
   };

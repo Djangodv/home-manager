@@ -63,10 +63,10 @@
         };
       };
       ExtensionUpdate = true;
-      Homepage = {
-        Locked = true;
-        StartPage = "none";
-      };
+      # Homepage = {
+      #   Locked = true;
+      #   StartPage = "none";
+      # };
       NewTabPage = false;
       PictureInPicture = {
         Enabled = false;
@@ -190,6 +190,10 @@
         };
       };
       settings = {
+
+        # Fixes Vimium extension not working upon startup inside a blank Firefox page
+        "browser.startup.homepage" = "https://noai.duckduckgo.com/";
+
         # Sanitize on shutdown settings
         "privacy.clearOnShutdown.cache" = false;
         "privacy.clearOnShutdown.cookies" = false;

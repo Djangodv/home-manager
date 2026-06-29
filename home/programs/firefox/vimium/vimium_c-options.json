@@ -1,0 +1,41 @@
+{
+	"name": "Vimium C",
+	"@time": "6/29/2026, 9:03:37 AM",
+	"time": 1782716617442,
+	"environment": {
+		"extension": "2.12.3",
+		"platform": "linux",
+		"firefox": 140
+	},
+	"keyLayout": 2,
+	"newTabUrl": "about:blank",
+	"searchEngines": [
+        "so|stackoverflow: https://noai.duckduckgo.com/?q=%s+site%3Astackoverflow.com Stack Overflow",
+		"se|stackexchange: https://noai.duckduckgo.com/?q=%s+site%3Astackexchange.com Stack Exchange",
+        "np|nix-packages|nixp: https://search.nixos.org/packages?&query=%s Nix Packages",
+		"no|nix-options|nixo: https://search.nixos.org/options?&query=%s Nix Options",
+		"re|reddit: https://noai.duckduckgo.com/?q=%s+site%3Areddit.com Reddit",
+		"mg|mar: https://marginalia-search.com/search?query=%s Marginalia Search",
+		"gp|ghp|github-personal: https://github.com/search?q=owner%3ADjangodv+%s Personal Repositories",
+		"g|go|gg|google|Google: https://www.google.com/search?q=%s \\",
+		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i \\",
+		"  blank=https://www.google.com/ Google",
+		"br|brave: https://search.brave.com/search?q=%s Brave",
+		"d|dd|ddg|duckduckgo: https://duckduckgo.com/?q=%s DuckDuckGo",
+		"ec|ecosia: https://www.ecosia.org/search?q=%s Ecosia",
+		"g.m|gm|g.map|gmap: https://www.google.com/maps?q=%s \\",
+		"  blank=https://www.google.com/maps Google Maps",
+		"y|yt: https://www.youtube.com/results?search_query=%s \\",
+		"  blank=https://www.youtube.com/ YouTube",
+		"w|wiki: https://www.wikipedia.org/w/index.php?search=%s Wikipedia",
+
+		"\\:i: vimium://sed/s/^//,lower\\ $S re= Lower case",
+		"v.m|math: vimium://math\\ $S re= Calculate",
+		"v.p: vimium://parse\\ $S re= Redo Search",
+		"gh|github: https://github.com/search?q=$s \\",
+		"  blank=https://github.com/ GitHub Repo",
+		"js\\:|Js: javascript:\\ $S; JavaScript",
+		""
+	],
+	"vimSync": true
+}

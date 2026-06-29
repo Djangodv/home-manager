@@ -108,8 +108,86 @@
       isDefault = true;
       search = {
         force = true;
-        default = "ddg";
-        privateDefault = "ddg";
+        default = "ddg-no-ai";
+        privateDefault = "ddg-no-ai";
+        engines = {
+
+          ddg-no-ai = {
+            name = "DuckDuckGo No-AI";
+            urls = [{ template = "https://noai.duckduckgo.com/?q={searchTerms}"; }];
+            iconMapObj."16" = "https://noai.duckduckgo.com/favicon.ico";
+            definedAliases = [ "@ddg" "@duckduckgo" ];
+          };
+
+          stack-overflow = {
+            name = "Stack Overflow";
+            urls = [{ template = "https://noai.duckduckgo.com/?q={searchTerms}+site%3Astackoverflow.com"; }];
+            iconMapObj."16" = "https://stackoverflow.com/favicon.ico";
+            definedAliases = [ "@so" "@stackoverflow" ];
+          };
+
+          # Stack Exchange
+          stack-exchange = {
+            name = "Stack Exchange";
+            urls = [{ template = "https://noai.duckduckgo.com/?q={searchTerms}+site%3Astackexchange.com"; }];
+            iconMapObj."16" = "https://stackexchange.com/favicon.ico";
+            definedAliases = [ "@se" "@stackexchange" ];
+          };
+
+          # Nix Packages
+          nix-packages = {
+            name = "Nix Packages";
+            urls = [{ template = "https://search.nixos.org/packages?&query={searchTerms}"; }];
+            iconMapObj."16" = "https://wiki.nixos.org/favicon.ico";
+            definedAliases = [ "@np" "@nix-packages" "@nixp" ];
+          };
+
+          # Nix Options
+          nix-options = {
+            name = "Nix Options";
+            urls = [{ template = "https://search.nixos.org/options?&query={searchTerms}"; }];
+            iconMapObj."16" = "https://wiki.nixos.org/favicon.ico";
+            definedAliases = [ "@no" "@nix-options" "@nixo" ];
+          };
+
+          # Reddit
+          reddit = {
+            name = "Reddit";
+            urls = [{ template = "https://noai.duckduckgo.com/?q={searchTerms}+site%3Areddit.com"; }];
+            iconMapObj."16" = "https://reddit.com/favicon.ico";
+            definedAliases = [ "@re" "@reddit" ];
+          };
+
+          # Marginalia Search
+          marginalia = {
+            name = "Marginalia Search";
+            urls = [{ template = "https://marginalia-search.com/search?query={searchTerms}"; }];
+            iconMapObj."16" = "https://marginalia-search.com/favicon.ico";
+            definedAliases = [ "@mar" "@mg" ];
+          };
+
+          github-repo = {
+            name = "Github Repositories";
+            urls = [{ template = "https://github.com/search?q={searchTerms}"; }];
+            iconMapObj."16" = "https://github.com/favicon.ico";
+            definedAliases = [ "@gh" "@github" ];
+          };
+
+          github-personal = {
+            name = "Personal Repositories";
+            urls = [{ template = "https://github.com/search?q=owner%3ADjangodv+{searchTerms}"; }];
+            iconMapObj."16" = "https://github.com/favicon.ico";
+            definedAliases = [ "@gp" "@ghp" "@github-personal" ];
+          };
+
+          # Hide specific search engines
+          ddg.metaData.hidden = true;
+          bing.metaData.hidden = true;
+          ebay-nl.metaData.hidden = true;
+          perplexity.metaData.hidden = true;
+          qwant.metaData.hidden = true;
+
+        };
       };
       settings = {
         # Sanitize on shutdown settings
@@ -144,14 +222,14 @@
           "placements" = { 
             "widget-overflow-fixed-list" = []; 
             "unified-extensions-area" = ["myallychou_gmail_com-browser-action" "vimium-c_gdh1995_cn-browser-action" "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action" ]; 
-            "nav-bar" = [ "sidebar-button" "forward-button" "back-button" "urlbar-container" "vertical-spacer" "unified-extensions-button"  "ublock0_raymondhill_net-browser-action"]; 
+            "nav-bar" = [ "sidebar-button" "back-button" "forward-button" "urlbar-container" "vertical-spacer" "unified-extensions-button"  "ublock0_raymondhill_net-browser-action"]; 
             "toolbar-menubar" = [ "menubar-items" ]; 
             "TabsToolbar" = []; 
             "vertical-tabs" = ["tabbrowser-tabs"]; 
             "PersonalToolbar" = ["personal-bookmarks"]; 
           }; 
           "seen" = [ "developer-button" "myallychou_gmail_com-browser-action" "ublock0_raymondhill_net-browser-action" "vimium-c_gdh1995_cn-browser-action" "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action" "screenshot-button"];
-          "dirtyAreaCache" = [ "nav-bar" "TabsToolbar" "vertical-tabs" "unified-extensions-area"]; 
+          "dirtyAreaCache" = [ "nav-bar" "TabsToolbar" "vertical-tabs" "unified-extensions-area" ]; 
           "currentVersion" = 22; 
           "newElementCount" = 1;
         };

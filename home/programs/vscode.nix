@@ -8,7 +8,7 @@
 		categories = [ "Utility" "TextEditor" "Development" "IDE" ];
 		comment= "Code Editing. Redefined.";
 		# "bash -c <command>" executes the specified command inside a new bash instance
-		exec = ''/run/current-system/sw/bin/dev-shell -c "code %F"'';
+		exec = ''/home/user/.nix-profile/bin/dev-shell -c "code %F"'';
 		genericName = "Text Editor";
 		icon = "vscode";
 		name = "Visual Studio Code";
@@ -22,7 +22,7 @@
 
 		actions = {
 			"new-empty-window" = {
-				exec = ''/run/current-system/sw/bin/dev-shell -c "code --new-window %F"'';
+				exec = ''/home/user/.nix-profile/bin/dev-shell -c "code --new-window %F"'';
 				icon = "vscode";
 				name = "New Empty Window";
 			};

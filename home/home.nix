@@ -5,6 +5,7 @@
 
     ./programs
     ./pkgs.nix
+    ./devshell.nix
 
   ];
 
